@@ -1,0 +1,123 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo para el video de fondo */
+  #bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Contenedor con la silueta del tomate */
+  .tomato-container {
+    width: 350px;
+    height: 350px;
+    background: url("../Images/tomate.png") no-repeat center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Estilos del formulario */
+  .tomato-container form {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    width: 80%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    text-align: center;
+  }
+  
+  /* Encabezado */
+  .tomato-container form h2 {
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  /* Estilos de labels */
+  .tomato-container form label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Estilos para los inputs */
+  .tomato-container form input[type="text"],
+  .tomato-container form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Efecto hover para inputs */
+  .tomato-container form input[type="text"]:hover,
+  .tomato-container form input[type="password"]:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Estilo del botón */
+  .tomato-container form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #D32F2F; /* Rojo tomate */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Efecto hover para el botón */
+  .tomato-container form button:hover {
+    transform: scale(1.05);
+    background-color: #c12727;
+  }
+  
+  /* Estilo para el texto de registro */
+  .registro-text {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .registro-text a {
+    color: #D32F2F;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .registro-text a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Fuente base para la página */
+  body {
+    font-family: Arial, sans-serif;
+  }
+  

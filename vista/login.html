@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Tomate con Video</title>
+  <link rel="stylesheet" href="../assets/CSS/stylelogin.css" />
+  <style>
+    /* Asegúrate de que en tu stylelogin.css tengas algo como esto: */
+    .error {
+      color: #e74c3c;
+      background: rgba(231,76,60,0.1);
+      padding: 8px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Video de fondo -->
+  <video autoplay muted loop id="bg-video">
+    <source src="../assets/videos/videologin.mp4" type="video/mp4">
+    Tu navegador no soporta videos HTML5.
+  </video>
+
+  <!-- Contenedor principal -->
+  <div class="container">
+    <!-- Contenedor con la silueta del tomate -->
+    <div class="tomato-container">
+      <!-- Formulario de login -->
+      <form action="../controlador/action/act_login.php" method="POST">
+        <h2>Iniciar sesión</h2>
+
+        <!-- Mensaje de error (se inyecta con JS) -->
+        <p id="error-msg" class="error" style="display:none;"></p>
+
+        <label for="usuario">Correo Electrónico</label>
+        <input
+          type="text"
+          id="usuario"
+          name="username"
+          placeholder="correo@dominio.com"
+          required
+        />
+
+        <label for="contrasena">Contraseña</label>
+        <input
+          type="password"
+          id="contrasena"
+          name="password"
+          placeholder="••••••••"
+          required
+        />
+
+        <button type="submit">Ingresar</button>
+
+        <!-- Texto de registro -->
+        <p class="registro-text">
+          ¿Aún no tienes cuenta? <a href="../vista/register.html">Regístrate</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Al cargar la página, comprobamos si hay ?error=empty o ?error=invalid
+    window.addEventListener('DOMContentLoaded', function() {
+      const params = new URLSearchParams(window.location.search);
+      const err = params.get('error');
+      const msgEl = document.getElementById('error-msg');
+      if (err === 'empty') {
+        msgEl.textContent = 'Por favor ingresa correo y contraseña.';
+        msgEl.style.display = 'block';
+      } else if (err === 'invalid') {
+        msgEl.textContent = 'Correo o contraseña incorrectos.';
+        msgEl.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

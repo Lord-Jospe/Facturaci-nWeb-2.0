@@ -1,0 +1,15 @@
+# Ignora archivos compilados
+*.class
+*.o
+*.exe
+
+# Ignora carpetas de dependencias
+node_modules/
+target/
+
+# Ignora archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Ignora variables de entorno o credenciales
+.env

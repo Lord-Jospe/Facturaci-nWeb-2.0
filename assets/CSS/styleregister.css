@@ -1,0 +1,100 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Contenedor que divide la pantalla en dos columnas */
+  .container {
+    display: flex;
+    width: 100%;
+    height: 100vh; /* Ocupa el alto total de la ventana */
+  }
+  
+  /* Columna Izquierda: Cuadro blanco, más pequeño */
+  .left-side {
+    width: 30%; /* Cuadro blanco reducido */
+    background-color: #fff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Caja interna del formulario de registro */
+  .register-box {
+    width: 80%; /* Puedes ajustar el ancho interno según tu gusto */
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  /* Estilos para los elementos del formulario */
+  .register-box h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .register-box form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .register-box form label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+  }
+  
+  .register-box form input[type="text"],
+  .register-box form input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .register-box form button {
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #D32F2F; /* Rojo tomate */
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .register-box form button:hover {
+    background-color: #c12727;
+  }
+  
+  /* Enlace para iniciar sesión */
+  .register-box p {
+    margin-top: 15px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .register-box p a {
+    color: #D32F2F;
+    text-decoration: none;
+  }
+  .register-box p a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Columna Derecha: Video */
+  .right-side {
+    width: 70%; /* Resto de la pantalla para el video */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Video a pantalla completa en su columna */
+  #bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+  }
+  

@@ -1,0 +1,257 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(218, 222, 218);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px;
+    font-size: 15px;
+    background-color: #11681a;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px; /* Ajusta según el tamaño que prefieras */
+    height: 100px; /* Debe ser igual al width para que sea un círculo */
+    border-radius: 50%;
+    object-fit: cover; /* Ajusta la imagen dentro del contenedor */
+    margin-right: 10px;
+}
+
+.button {
+    display: flex;
+    gap: 1rem;
+} 
+
+.btn-login, .btn-register {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3sease;
+    font-size: 1rem;
+    font-weight: 600;
+    min-width: 140px;
+}
+
+.btn-login {
+    background-color: whitesmoke;
+    border: 2px solid rgb(12, 238, 155);
+    color: rgb(12, 234, 153);
+}
+
+.btn-register {
+    background-color: rgb(16, 214, 112);
+    color: var(--white);
+    box-shadow: 0 4px 6px rgba(131, 199, 133, 0.2);
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupa toda la pantalla */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen cubra todo */
+    z-index: -1; /* Coloca la imagen detrás del texto */
+}
+
+.hero-text {
+    background: rgba(255, 255, 255, 0.6); /* Fondo semi-transparente */
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.hero-text h2 {
+    color: #d42929; /* Azul turquí */
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.factura-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px auto;
+    width: 80%;
+    gap: 20px; /* Añade espacio entre los elementos */
+}
+
+.factura-text {
+    background: #e0cd6b;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #0cdd40; 
+    text-align: left;
+    margin-left: 10px;
+    box-shadow: 0px 4px 8px #0dd307;
+}
+
+.factura {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 50%;
+    margin-left: 20px; /* Agrega margen izquierdo para separarla */
+}
+
+.factura h3 {
+    color: #d9534f;
+}
+
+.serie-numero {
+    font-weight: bold;
+    color: red;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #5cb85c;
+    color: white;
+}
+
+.factura-footer {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-success {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-danger {
+    background-color: #d9534f;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #d9534f;
+}
+
+.footer {
+    background: #1c1c1c;
+    color: #fff;
+    padding: 40px 0;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    width: 30%;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    color: #00cc66;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #00cc66;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+    margin-top: 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #00cc66;
+}
+

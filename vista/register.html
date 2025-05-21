@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  <link rel="stylesheet" href="../assets/CSS/styleregister.css">
+  <style>
+    .error {
+      color: #e74c3c;
+      background: rgba(231,76,60,0.1);
+      padding: 8px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .mensaje {
+      color: #28a745;
+      background: rgba(40,167,69,0.1);
+      padding: 8px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Columna Izquierda -->
+    <div class="left-side">
+      <div class="register-box">
+        <h2>Registro</h2>
+
+        <!-- Mensajes de error/éxito -->
+        <div id="msg"></div>
+
+        <form action="../controlador/action/act_register.php" method="POST">
+          <label for="nombreUsuario">Nombre</label>
+          <input
+            type="text"
+            id="nombreUsuario"
+            name="nombre"
+            placeholder="Ingresa tu nombre"
+            required
+          />
+
+          <label for="direccion">Dirección</label>
+          <input
+            type="text"
+            id="direccion"
+            name="direccion"
+            placeholder="Ingresa tu dirección"
+          />
+
+          <label for="telefono">Teléfono</label>
+          <input
+            type="text"
+            id="telefono"
+            name="telefono"
+            placeholder="Ingresa tu teléfono"
+          />
+
+          <label for="correoUsuario">Correo</label>
+          <input
+            type="email"
+            id="correoUsuario"
+            name="email"
+            placeholder="Ingresa tu correo"
+            required
+          />
+
+          <label for="contrasena">Contraseña</label>
+          <input
+            type="password"
+            id="contrasena"
+            name="contrasena"
+            placeholder="Ingrese su contraseña"
+            required
+          />
+
+          <label for="confirmar_contrasena">Confirmar Contraseña</label>
+          <input
+            type="password"
+            id="confirmar_contrasena"
+            name="confirm"
+            placeholder="Confirme su contraseña"
+            required
+          />
+
+          <button type="submit" name="submit">Registrarse</button>
+        </form>
+
+        <p>¿Ya tienes cuenta? <a href="../vista/login.html">Iniciar Sesión</a></p>
+      </div>
+    </div>
+
+    <!-- Columna Derecha (Video) -->
+    <div class="right-side">
+      <video autoplay muted loop id="bg-video">
+        <source src="../assets/videos/videoregister.mov" type="video/mp4">
+        Tu navegador no soporta videos HTML5.
+      </video>
+    </div>
+  </div>
+
+  <script>
+    // Mostrar mensajes según ?error o ?msg en la URL
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const err = params.get('error');
+      const ok  = params.get('msg');
+      const container = document.getElementById('msg');
+      if (err) {
+        const textos = {
+          empty: 'Por favor completa todos los campos obligatorios.',
+          invalid_email: 'Correo inválido.',
+          password_mismatch: 'Las contraseñas no coinciden.',
+          email_exists: 'Este correo ya está registrado.',
+          db: 'Ocurrió un error al registrar. Intenta de nuevo.'
+        };
+        container.innerHTML = `<div class="error">${textos[err]||'Error desconocido.'}</div>`;
+      } else if (ok === 'registered') {
+        container.innerHTML = `<div class="mensaje">¡Registro exitoso! Ya puedes iniciar sesión.</div>`;
+      }
+    });
+  </script>
+</body>
+</html>
