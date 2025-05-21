@@ -3,6 +3,9 @@
 *.o
 *.exe
 
+# Configuración de VS Code
+.vscode/
+
 # Ignora carpetas de dependencias
 node_modules/
 target/
